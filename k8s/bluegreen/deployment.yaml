@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bluegreen
+  labels:
+    app: bluegreen
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bluegreen
+  template:
+    metadata:
+      labels:
+        app: bluegreen
+    spec:
+      containers:
+      - name: helloworld
+        image: gcr.io/kapetanios/pipecd-helloworld:v0.0.2-151-gec0005b
+        args:
+          - server
+        ports:
+        - containerPort: 9085

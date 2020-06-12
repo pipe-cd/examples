@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  repository: gcr.io/kapetanios/pipecd-helloworld
+  tag: v0.0.2-27-g067c7e0
+
+fullnameOverride: helm-local-chart
+
+service:
+  port: 9085

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analysis-by-metrics
+  labels:
+    app: analysis-by-metrics
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: analysis-by-metrics
+  template:
+    metadata:
+      labels:
+        app: analysis-by-metrics
+    spec:
+      containers:
+      - name: helloworld
+        image: gcr.io/kapetanios/pipecd-helloworld:v0.0.2-160-ge0e6b0e
+        args:
+          - server
+        ports:
+        - containerPort: 9085

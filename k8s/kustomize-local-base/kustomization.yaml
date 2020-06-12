@@ -1,0 +1,7 @@
+bases:
+- ../local/kustomization-bases/helloworld
+
+nameSuffix: -simple
+
+commonLabels:
+  app: kustomize-simple

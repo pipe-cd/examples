@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: canary
+  labels:
+    app: canary
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: canary
+  template:
+    metadata:
+      labels:
+        app: canary
+    spec:
+      containers:
+      - name: helloworld
+        image: gcr.io/kapetanios/pipecd-helloworld:v0.0.2-27-g067c7e0
+        args:
+          - server
+        ports:
+        - containerPort: 9085

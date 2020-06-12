@@ -1,0 +1,10 @@
+apiVersion: pipecd.dev/v1beta1
+kind: KubernetesApp
+spec:
+  input:
+    # Helm chart sourced from current Git repo.
+    helmChart:
+      path: ../local/helm-charts/helloworld
+    helmValueFiles:
+    - values.yaml
+    helmVersion: 3.1.1
