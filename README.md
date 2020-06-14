@@ -4,7 +4,7 @@ A repository contains samples for PipeCD.
 
 ```
 .
-├── k8s
+├── kubernetes
 │   ├── analysis-by-http
 │   ├── analysis-by-log
 │   ├── analysis-by-metrics
