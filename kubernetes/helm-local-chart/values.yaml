@@ -1,8 +1,8 @@
 replicaCount: 2
 
 image:
-  repository: gcr.io/kapetanios/pipecd-helloworld
-  tag: v0.0.2-27-g067c7e0
+  repository: gcr.io/pipecd/helloworld
+  tag: v0.1.0-71-g771df05
 
 fullnameOverride: helm-local-chart
 
