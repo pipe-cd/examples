@@ -11,6 +11,7 @@ A repository contains samples for PipeCD.
 │   ├── analysis-with-baseline
 │   ├── bluegreen
 │   ├── canary
+│   ├── canary-by-config-change
 │   ├── helm-local-chart
 │   ├── helm-remote-chart
 │   ├── helm-remote-git-chart
