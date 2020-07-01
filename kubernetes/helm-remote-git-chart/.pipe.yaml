@@ -4,9 +4,11 @@ spec:
   input:
     # Helm chart sourced from another Git repo.
     helmChart:
-      git: git@github.com:org/chart-repo.git
-      path: charts/demoapp
-      ref: v1.0.0
-    helmValueFiles:
-    - values.yaml
+      gitRemote: git@github.com:pipe-cd/manifests.git
+      ref: v0.1.2-3-g8fe5d7e
+      path: manifests/helloworld
+    helmOptions:
+      valueFiles:
+        - values.yaml
+      releaseName: helm-remote-git-chart
     helmVersion: 3.1.1

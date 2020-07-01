@@ -1,8 +1,8 @@
-replicaCount: 2
+replicaCount: 1
 
 image:
   repository: gcr.io/pipecd/helloworld
-  tag: v0.1.0-71-g771df05
+  tag: v0.1.1-7-g7967947
 
 fullnameOverride: helm-local-chart
 

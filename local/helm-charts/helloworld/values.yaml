@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: gcr.io/pipecd/helloworld
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
