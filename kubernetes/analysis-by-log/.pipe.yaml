@@ -14,5 +14,5 @@ spec:
             - query: 'logName = "projects/demo/logs/error'
               interval: 1m
               provider: stackdriver-dev
-      - name: K8S_PRIMARY_UPDATE
+      - name: K8S_PRIMARY_ROLLOUT
       - name: K8S_CANARY_CLEAN

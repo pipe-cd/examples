@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: analysis-by-http
+      pipecd.dev/variant: primary
   template:
     metadata:
       labels:
         app: analysis-by-http
+        pipecd.dev/variant: primary
     spec:
       containers:
       - name: helloworld

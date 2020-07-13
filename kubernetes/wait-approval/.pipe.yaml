@@ -12,5 +12,5 @@ spec:
         with:
           approvers:
             - nghialv
-      - name: K8S_PRIMARY_UPDATE
+      - name: K8S_PRIMARY_ROLLOUT
       - name: K8S_CANARY_CLEAN

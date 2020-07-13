@@ -2,6 +2,8 @@
 apiVersion: pipecd.dev/v1beta1
 kind: KubernetesApp
 spec:
+  input:
+    autoRollback: true
   pipeline:
     stages:
       # Deploy the workloads of CANARY variant. In this case, the number of
@@ -14,6 +16,6 @@ spec:
         with:
           duration: 1m
       # Update the workload of PRIMARY variant to the new version.
-      - name: K8S_PRIMARY_UPDATE
+      - name: K8S_PRIMARY_ROLLOUT
       # Destroy all workloads of CANARY variant.
       - name: K8S_CANARY_CLEAN

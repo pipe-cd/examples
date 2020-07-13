@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: analysis-with-baseline
+      pipecd.dev/variant: primary
   template:
     metadata:
       labels:
         app: analysis-with-baseline
+        pipecd.dev/variant: primary
     spec:
       containers:
       - name: helloworld

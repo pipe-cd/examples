@@ -13,6 +13,6 @@ spec:
         with:
           duration: 10m
           threshold: 2
-      - name: K8S_PRIMARY_UPDATE
+      - name: K8S_PRIMARY_ROLLOUT
       - name: K8S_CANARY_CLEAN
       - name: K8S_BASELINE_CLEAN

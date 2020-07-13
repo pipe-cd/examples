@@ -15,5 +15,5 @@ spec:
               method: GET
               expected: 200
               interval: 1m
-      - name: K8S_PRIMARY_UPDATE
+      - name: K8S_PRIMARY_ROLLOUT
       - name: K8S_CANARY_CLEAN

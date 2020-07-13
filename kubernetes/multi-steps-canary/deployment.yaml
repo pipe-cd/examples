@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: multi-steps-canary
+      pipecd.dev/variant: primary
   template:
     metadata:
       labels:
         app: multi-steps-canary
+        pipecd.dev/variant: primary
     spec:
       containers:
       - name: helloworld

@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: wait-approval
+      pipecd.dev/variant: primary
   template:
     metadata:
       labels:
         app: wait-approval
+        pipecd.dev/variant: primary
     spec:
       containers:
       - name: helloworld
