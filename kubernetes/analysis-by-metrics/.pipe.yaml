@@ -1,6 +1,8 @@
 apiVersion: pipecd.dev/v1beta1
 kind: KubernetesApp
 spec:
+  sync:
+    prune: true
   pipeline:
     stages:
       - name: K8S_CANARY_ROLLOUT

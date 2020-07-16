@@ -28,4 +28,4 @@ spec:
   trafficRouting:
     method: istio
     istio:
-      host: mesh-istio-canary
+      host: mesh-istio-canary.default.svc.cluster.local

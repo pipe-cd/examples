@@ -13,11 +13,3 @@ spec:
           host: mesh-istio-bluegreen
           subset: primary
         weight: 100
-      - destination:
-          host: mesh-istio-bluegreen
-          subset: canary
-        weight: 0
-      - destination:
-          host: mesh-istio-bluegreen
-          subset: baseline
-        weight: 0

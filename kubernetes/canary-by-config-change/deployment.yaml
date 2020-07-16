@@ -5,7 +5,7 @@ metadata:
   labels:
     app: canary-by-config-change
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: canary-by-config-change

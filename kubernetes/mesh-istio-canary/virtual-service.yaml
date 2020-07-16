@@ -13,11 +13,3 @@ spec:
           host: mesh-istio-canary.default.svc.cluster.local
           subset: primary
         weight: 100
-      - destination:
-          host: mesh-istio-canary.default.svc.cluster.local
-          subset: canary
-        weight: 0
-      - destination:
-          host: mesh-istio-canary.default.svc.cluster.local
-          subset: baseline
-        weight: 0
