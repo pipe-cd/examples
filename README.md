@@ -1,6 +1,6 @@
-# samples
+# examples
 
-A repository contains samples for PipeCD.
+A repository contains examples for PipeCD.
 
 ```
 .
