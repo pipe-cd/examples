@@ -1,6 +1,8 @@
 # examples
 
-A repository contains some examples for PipeCD.
+Examples to demonstrate how to use PipeCD.
+
+NOTE: This repository is automatically synced from the [examples](https://github.com/pipe-cd/pipe/tree/master/examples) directory of the [pipe-cd/pipe](https://github.com/pipe-cd/pipe/tree/master/examples) repository. So in case you want to make a pull request to change the content of this, please send the pull request to [pipe-cd/pipe](https://github.com/pipe-cd/pipe/tree/master/examples) repository.
 
 ### Kubernetes Applications
 
