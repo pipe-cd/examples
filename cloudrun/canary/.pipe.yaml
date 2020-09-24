@@ -1,0 +1,24 @@
+# Deployment pipeline with canary strategy.
+apiVersion: pipecd.dev/v1beta1
+kind: CloudRunApp
+spec:
+  pipeline:
+    stages:
+      # Promote new version to receive amount of traffic.
+      - name: CLOUDRUN_PROMOTE
+        with:
+          percent: 10
+      - name: WAIT
+        with:
+          duration: 30s
+      # Promote new version to receive amount of traffic.
+      - name: CLOUDRUN_PROMOTE
+        with:
+          percent: 50
+      - name: WAIT
+        with:
+          duration: 30s
+      # Promote new version to receive all traffic.
+      - name: CLOUDRUN_PROMOTE
+        with:
+          percent: 100

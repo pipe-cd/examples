@@ -1,0 +1,7 @@
+# Deploy a kustomize package that uses remote bases from other Git repositories
+# without using pipeline.
+apiVersion: pipecd.dev/v1beta1
+kind: KubernetesApp
+spec:
+  input:
+    kustomizeVersion: 3.5.5
