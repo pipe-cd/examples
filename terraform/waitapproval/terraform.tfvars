@@ -1,1 +1,0 @@
-content = "hello-waitapproval-example"
