@@ -1,8 +1,0 @@
-apiVersion: pipecd.dev/v1beta1
-kind: CloudRunApp
-spec:
-  encryption:
-    encryptedSecrets:
-      key: {ENCRYPTED_DATA_GENERATED_FROM_WEB}
-    decryptionTargets:
-      - service.yaml
