@@ -1,0 +1,13 @@
+apiVersion: pipecd.dev/v1beta1
+kind: KubernetesApp
+spec:
+  name: secret-management
+  input:
+    manifests:
+      - deployment.yaml
+      - secret.yaml
+  encryption:
+    encryptedSecrets:
+      password: {ENCRYPTED_DATA_GENERATED_FROM_WEB}
+    decryptionTargets:
+      - secret.yaml

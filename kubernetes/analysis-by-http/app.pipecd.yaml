@@ -1,0 +1,20 @@
+apiVersion: pipecd.dev/v1beta1
+kind: KubernetesApp
+spec:
+  name: analysis-by-http
+  pipeline:
+    stages:
+      - name: K8S_CANARY_ROLLOUT
+        with:
+          replicas: 10%
+      - name: ANALYSIS
+        with:
+          duration: 10m
+          https:
+            - url: https://canary-endpoint.pipecd.dev
+              method: GET
+              expectedCode: 200
+              failureLimit: 1
+              interval: 1m
+      - name: K8S_PRIMARY_ROLLOUT
+      - name: K8S_CANARY_CLEAN
