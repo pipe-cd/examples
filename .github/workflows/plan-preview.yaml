@@ -3,7 +3,7 @@ name: PipeCD
 on:
   pull_request:
     branches:
-      - main
+      - master
     types: [opened, synchronize, reopened]
   issue_comment:
     types: [created]
