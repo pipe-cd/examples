@@ -1,1 +1,1 @@
-content = "hello-simple-example"
+content = "hi-simple-example"
