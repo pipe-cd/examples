@@ -1,0 +1,23 @@
+name: sync
+
+on:
+  schedule:
+    - cron:  '0/5 * * * *'
+
+jobs:
+  examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: examples
+      - uses: actions/checkout@v3
+        with:
+          repository: pipe-cd/pipecd
+          path: pipecd
+      - run: |
+          rm -rf kubernetes
+          cp -rf pipecd/examples/kubernetes .
+          git status
+          git add .
+          git commit -m "Sync with the examples directory in pipe-cd/pipecd repository"
