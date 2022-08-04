@@ -27,7 +27,7 @@ jobs:
           cp -rf ../pipecd/examples/local-modules .
           cp -rf ../pipecd/examples/terraform .
       - run: |
-          pwd
+          cd examples
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
