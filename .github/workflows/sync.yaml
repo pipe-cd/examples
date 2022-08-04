@@ -18,10 +18,15 @@ jobs:
       - run: |
           git -C pipecd rev-parse HEAD > examples/HEAD.txt
           cd examples
-          rm -rf kubernetes
+          rm -rf cloudrun deployment-chain ecs kubernetes lambda local-modules terraform
+          cp -rf ../pipecd/examples/cloudrun .
+          cp -rf ../pipecd/examples/deployment-chain .
+          cp -rf ../pipecd/examples/ecs .
           cp -rf ../pipecd/examples/kubernetes .
+          cp -rf ../pipecd/examples/lambda .
+          cp -rf ../pipecd/examples/local-modules .
+          cp -rf ../pipecd/examples/terraform .
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git status
           git add .
-          git commit -m "Sync with the examples directory in pipe-cd/pipecd repository"
+          git commit -m "Sync with pipe-cd/pipecd repository at $(<HEAD.txt)"
