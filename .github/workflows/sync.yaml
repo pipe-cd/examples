@@ -16,8 +16,11 @@ jobs:
           repository: pipe-cd/pipecd
           path: pipecd
       - run: |
+          pwd
+          ls
+          cd examples
           rm -rf kubernetes
-          cp -rf pipecd/examples/kubernetes .
+          cp -rf ../pipecd/examples/kubernetes .
           git status
           git add .
           git commit -m "Sync with the examples directory in pipe-cd/pipecd repository"
