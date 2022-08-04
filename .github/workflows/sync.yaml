@@ -26,10 +26,10 @@ jobs:
           cp -rf ../pipecd/examples/lambda .
           cp -rf ../pipecd/examples/local-modules .
           cp -rf ../pipecd/examples/terraform .
-      - run: |
-          cd examples
+          if [[ -z `git status --porcelain` ]]; then
+            exit
+          fi
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
           git commit -m "Sync with pipe-cd/pipecd repository at $(<HEAD.txt)"
-          git push
