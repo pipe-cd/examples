@@ -16,9 +16,8 @@ jobs:
           repository: pipe-cd/pipecd
           path: pipecd
       - run: |
-          cd pipecd
-          git rev-parse HEAD > HEAD.txt
-          cd ../examples
+          git -C pipecd rev-parse HEAD > examples/HEAD.txt
+          cd examples
           rm -rf kubernetes
           cp -rf ../pipecd/examples/kubernetes .
           git config user.name github-actions
