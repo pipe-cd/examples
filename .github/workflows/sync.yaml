@@ -16,11 +16,13 @@ jobs:
           repository: pipe-cd/pipecd
           path: pipecd
       - run: |
-          pwd
-          ls
-          cd examples
+          cd pipecd
+          git rev-parse HEAD > HEAD.txt
+          cd ../examples
           rm -rf kubernetes
           cp -rf ../pipecd/examples/kubernetes .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git status
           git add .
           git commit -m "Sync with the examples directory in pipe-cd/pipecd repository"
