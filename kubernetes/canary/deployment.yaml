@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx_canary
+  name: canary
   labels:
-    app: nginx_canary
+    app: canary
 spec:
   replicas: 3
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: nginx_canary
+      app: canary
       pipecd.dev/variant: primary
   template:
     metadata:
       labels:
-        app: nginx_canary
+        app: canary
         pipecd.dev/variant: primary
     spec:
       containers:
-      - name: nginx
+      - name: hello-world
         image: nginx:1.14.2
         args:
           - server

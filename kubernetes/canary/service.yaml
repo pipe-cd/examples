@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx_canary
+  name: canary
 spec:
   selector:
-    app: nginx_canary
+    app: canary
   ports:
     - protocol: TCP
       port: 9085
