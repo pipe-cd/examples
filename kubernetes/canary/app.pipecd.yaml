@@ -11,7 +11,7 @@ spec:
       # workload replicas of CANARY variant is 10% of the replicas number of PRIMARY variant.
       - name: K8S_CANARY_ROLLOUT
         with:
-          replicas: 10%
+          replicas: 60%
       # Wait 10 seconds before going to the next stage.
       - name: WAIT
         with:

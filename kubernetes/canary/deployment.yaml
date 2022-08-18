@@ -5,7 +5,7 @@ metadata:
   labels:
     app: canary
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: ghcr.io/pipe-cd/helloworld:v0.2.0
+        image: ghcr.io/pipe-cd/helloworld:v0.32.0
         args:
           - server
         ports:
