@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bluegreen
+  labels:
+    app: bluegreen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bluegreen
+      pipecd.dev/variant: primary
+  template:
+    metadata:
+      labels:
+        app: bluegreen
+        pipecd.dev/variant: primary
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        args:
+          - server
+        ports:
+        - containerPort: 80
