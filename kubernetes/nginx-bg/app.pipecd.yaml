@@ -1,7 +1,7 @@
 apiVersion: pipecd.dev/v1beta1
 kind: KubernetesApp
 spec:
-  name: bluegreen
+  name: nginx-bg
   labels:
     env: example
     team: product

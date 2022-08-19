@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bluegreen
+  name: nginx-bg
   labels:
-    app: bluegreen
+    app: nginx-bg
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: bluegreen
+      app: nginx-bg
       pipecd.dev/variant: primary
   template:
     metadata:
       labels:
-        app: bluegreen
+        app: nginx-bg
         pipecd.dev/variant: primary
     spec:
       containers:
-      - name: nginx
+      - name: nginx-bg
         image: nginx:latest
         args:
           - server

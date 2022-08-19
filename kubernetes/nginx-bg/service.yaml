@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bluegreen
+  name: nginx-bg
 spec:
   selector:
-    app: bluegreen
+    app: nginx-bg
     pipecd.dev/variant: primary
   ports:
     - protocol: TCP
