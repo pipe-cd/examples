@@ -1,7 +1,7 @@
 apiVersion: pipecd.dev/v1beta1
 kind: KubernetesApp
 spec:
-  name: canary
+  name: nginx
   labels:
     env: example
     team: product
