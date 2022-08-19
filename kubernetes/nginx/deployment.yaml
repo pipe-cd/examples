@@ -9,7 +9,7 @@ spec:
     matchLabels:
       app: nginx
       pipecd.dev/variant: primary
-  replicas: 3 
+  replicas: 4 
   revisionHistoryLimit: 2
   template:
     metadata:
