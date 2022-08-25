@@ -2,7 +2,6 @@ apiVersion: pipecd.dev/v1beta1
 kind: KubernetesApp
 spec:
   name: nginx-canary
-  namespace: test-canary
   labels:
     env: example
     team: product
