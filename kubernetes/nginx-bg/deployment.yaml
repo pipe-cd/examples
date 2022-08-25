@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: nginx-bg
-        image: nginx:1.14.2
+        image: nginx:latest
         ports:
         - containerPort: 80
