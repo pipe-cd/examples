@@ -1,0 +1,25 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: test-canary
+  labels:
+    app: nginx-canary
+spec:
+  selector:
+    matchLabels:
+      app: nginx-canary
+      pipecd.dev/variant: primary
+  replicas: 3 
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-canary
+        pipecd.dev/variant: primary
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80

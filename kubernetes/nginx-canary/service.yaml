@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-canary
+  namespace: test-canary
+spec:
+  selector:
+    app: nginx-canary
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
