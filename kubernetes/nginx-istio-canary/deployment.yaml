@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-istio-canary
+  namespace: test-canary
+  labels:
+    app: nginx-istio-canary
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-istio-canary
+      pipecd.dev/variant: primary
+  template:
+    metadata:
+      labels:
+        app: nginx-istio-canary
+        pipecd.dev/variant: primary
+      annotations:
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.0
+        args:
+          - server
+        ports:
+        - containerPort: 80
