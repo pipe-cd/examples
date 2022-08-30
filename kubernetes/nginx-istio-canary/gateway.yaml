@@ -13,4 +13,3 @@ spec:
       protocol: HTTP
     hosts:
     - "nginx-istio-canary.pipecd.dev"
-    namespace: test-canary
