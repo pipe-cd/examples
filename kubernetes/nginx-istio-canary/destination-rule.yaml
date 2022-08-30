@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: nginx-istio-canary
+  namespace: test-canary
 spec:
   host: nginx-istio-canary.default.svc.cluster.local
   subsets:
