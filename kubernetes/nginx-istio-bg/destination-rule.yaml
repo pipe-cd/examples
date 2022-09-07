@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: nginx-istio-bluegreen
+  namespace: bg-pipecd
+spec:
+  host: nginx-istio-bluegreen
+  subsets:
+  - name: primary
+    labels:
+      pipecd.dev/variant: primary
+  - name: canary
+    labels:
+      pipecd.dev/variant: canary
+  - name: baseline
+    labels:
+      pipecd.dev/variant: baseline
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: nginx-istio-bluegreen
+  namespace: bg-pipecd
+spec:
+  hosts:
+    - nginx-istio-bluegreen.pipecd.dev
+  gateways:
+    - nginx-istio-bluegreen
+  http:
+    - route:
+      - destination:
+          host: nginx-istio-bluegreen
+          subset: primary
+        weight: 100

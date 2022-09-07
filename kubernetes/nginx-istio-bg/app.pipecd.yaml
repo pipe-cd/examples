@@ -1,0 +1,36 @@
+apiVersion: pipecd.dev/v1beta1
+kind: KubernetesApp
+spec:
+  name: nginx-istio-bluegreen
+  labels:
+    env: example
+    team: product
+  pipeline:
+    stages:
+      # Deploy the workloads of CANARY variant. In this case, the number of
+      # workload replicas of CANARY variant is the same with PRIMARY variant.
+      - name: K8S_CANARY_ROLLOUT
+        with:
+          replicas: 100%
+      # The percentage of traffic each variant should receive.
+      # In this case, CANARY variant will receive all of the traffic.
+      - name: K8S_TRAFFIC_ROUTING
+        with:
+          all: canary
+      - name: WAIT_APPROVAL
+      # Update the workload of PRIMARY variant to the new version.
+      - name: K8S_PRIMARY_ROLLOUT
+      # The percentage of traffic each variant should receive.
+      # In this case, PRIMARY variant will receive all of the traffic.
+      - name: K8S_TRAFFIC_ROUTING
+        with:
+          all: primary
+      # Destroy all workloads of CANARY variant.
+      - name: K8S_CANARY_CLEAN
+  trafficRouting:
+    method: istio
+    istio:
+      host: nginx-istio-bluegreen
+  description: |
+    This app demonstrates how to deploy a Kubernetes app with BlueGreen strategy by using Istio mesh.\
+    References: [adding a new app](https://pipecd.dev/docs/user-guide/adding-an-application/), [app configuration](https://pipecd.dev/docs/user-guide/configuration-reference/)
