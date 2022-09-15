@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
   name: nginx-istio-canary
-  namespace: test-canary
+  namespace: canary-pipecd
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation

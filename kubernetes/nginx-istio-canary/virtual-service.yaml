@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: nginx-istio-canary
-  namespace: test-canary
+  namespace: canary-pipecd
 spec:
   hosts:
     - nginx-istio-canary.pipecd.dev

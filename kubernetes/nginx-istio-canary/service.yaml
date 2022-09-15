@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-istio-canary
-  namespace: test-canary
+  namespace: canary-pipecd
 spec:
   selector:
     app: nginx-istio-canary
