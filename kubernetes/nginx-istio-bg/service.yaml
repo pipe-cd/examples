@@ -3,7 +3,10 @@ kind: Service
 metadata:
   name: nginx-istio-bluegreen
   namespace: bg-pipecd
+  annotations:
+      service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
 spec:
+  type: LoadBalancer
   selector:
     app: nginx-istio-bluegreen
   ports:
