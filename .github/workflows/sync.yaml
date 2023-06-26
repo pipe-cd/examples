@@ -26,7 +26,7 @@ jobs:
           cp -rf ../pipecd/examples/lambda .
           cp -rf ../pipecd/examples/local-modules .
           cp -rf ../pipecd/examples/terraform .
-          cp -rf ../pipecd/examples/README.remote.md README.md
+          cp ../pipecd/examples/README.remote.md README.md
           if [[ -z `git status --porcelain` ]]; then
             exit
           fi
