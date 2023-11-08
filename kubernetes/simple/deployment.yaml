@@ -22,6 +22,6 @@ spec:
       - name: helloworld
         image: ghcr.io/pipe-cd/helloworld:v0.32.0
         args:
-          - server-a
+          - server
         ports:
-        - containerPort: 9086
+        - containerPort: 9085
