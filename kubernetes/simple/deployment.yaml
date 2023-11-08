@@ -24,4 +24,4 @@ spec:
         args:
           - server
         ports:
-        - containerPort: 9085
+        - containerPort: 9086
