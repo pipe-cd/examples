@@ -19,3 +19,8 @@ resource "google_storage_bucket_object" "object" {
   bucket  = "pipecd-play-terraform-examples"
   content = var.content
 }
+resource "google_storage_bucket_object" "object-test" {
+  name    = "simple/${terraform.workspace}.txt"
+  bucket  = "pipecd-play-terraform-examples"
+  content = var.content
+}
