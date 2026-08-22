@@ -18,14 +18,9 @@ jobs:
       - run: |
           git -C pipecd rev-parse HEAD > examples/HEAD.txt
           cd examples
-          rm -rf cloudrun deployment-chain ecs kubernetes lambda local-modules terraform
-          cp -rf ../pipecd/examples/cloudrun .
-          cp -rf ../pipecd/examples/deployment-chain .
-          cp -rf ../pipecd/examples/ecs .
-          cp -rf ../pipecd/examples/kubernetes .
-          cp -rf ../pipecd/examples/lambda .
-          cp -rf ../pipecd/examples/local-modules .
-          cp -rf ../pipecd/examples/terraform .
+          rm -rf cloudrun deployment-chain ecs kubernetes lambda local-modules terraform v0 v1
+          cp -rf ../pipecd/examples/v0 .
+          cp -rf ../pipecd/examples/v1 .
           cp -rf ../pipecd/examples/README.remote.md README.md
           if [[ -z `git status --porcelain` ]]; then
             exit
